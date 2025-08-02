@@ -138,8 +138,12 @@ class AirzonecloudDevice(ClimateEntity):
 
     @property
     def supported_features(self):
-        """Return the list of supported features."""
-        return ClimateEntityFeature.TARGET_TEMPERATURE
+        """Return the lista de características soportadas."""
+        return (
+            ClimateEntityFeature.TARGET_TEMPERATURE
+            | ClimateEntityFeature.TURN_ON
+            | ClimateEntityFeature.TURN_OFF
+        )
 
     @property
     def min_temp(self) -> float:
